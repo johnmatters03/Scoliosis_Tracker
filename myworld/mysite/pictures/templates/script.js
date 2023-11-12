@@ -27,8 +27,12 @@ async function detectPose(imageElement) {
 }
 
 function drawPoses(poses) {
+    let rldiff = 0;
     poses.forEach(pose => {
         pose.keypoints.forEach(keypoint => {
+            if (keypoint.name == "left_shoulder") rldiff = rldiff - keypoint.y;
+            if (keypoint.name == "right_shoulder") rldiff = rldiff + keypoint.y;
+
             // console.log(keypoint); // Log each keypoint
             if (keypoint.score > 0.5) {
                 // Ensure x and y are available
@@ -43,7 +47,12 @@ function drawPoses(poses) {
                 }
             }
         });
+        console.log("rldiff: ", rldiff);
     });
+
+
+
+    console.log()
 }
 
 
