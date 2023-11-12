@@ -54,7 +54,7 @@ function drawPoses(poses) {
         });
 
         diff.textContent = rldiff;
-        dictionary["rldiff"] = [rldiff];
+        dictionary["rldiff"] = rldiff;
         console.log("rldiff: ", rldiff);
         return dictionary;
     }

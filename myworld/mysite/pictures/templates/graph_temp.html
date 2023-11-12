@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Graph</title>
+    <style>
+        #graphCanvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="graphCanvas" width="800" height="400"></canvas>
+    <!-- Store the graph data in a data attribute -->
+    <div id="graphData" data-graph="{{ graph_data|safe }}" style="display: none;"></div>
+
+    <script src="{% static 'pictures/chart-script.js' %}"></script>
+</body>
+</html>

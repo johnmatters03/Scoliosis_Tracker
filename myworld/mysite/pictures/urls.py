@@ -8,6 +8,7 @@ app_name = 'pictures'
 
 urlpatterns = [
     path("", views.upload_picture, name='upload_picture'),
+    path('graph/', views.graph_view, name='graph-view'),
     path('view/<int:picture_id>/', views.view_picture, name='view_picture'),
 ]
 

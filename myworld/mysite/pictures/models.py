@@ -1,4 +1,5 @@
 from django.db import models
+import json
 
 class Picture(models.Model):
     """image = models.ImageField(upload_to='postures/')
