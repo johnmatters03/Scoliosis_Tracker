@@ -19,6 +19,8 @@
                 <label for="imageUpload">Select image:</label>
                 <input type="file" class="form-control-file" id="imageUpload" name="image" accept="image/*" required>
             </div>
+            {% csrf_token %}
+            {{ form.as_p }}
             <button type="submit" class="btn btn-primary">Upload</button>
         </form>
     </div>
