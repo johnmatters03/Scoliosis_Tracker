@@ -1,0 +1,13 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+canvas {
+    max-width: 100%; /* Ensures canvas is not bigger than the screen width */
+    max-height: 100vh; /* Optional: You can set a maximum height as well */
+    border: 1px solid black;
+}
