@@ -8,4 +8,6 @@ class PictureForm(forms.ModelForm):
  
     class Meta:
         model = Picture
-        fields = ('image',)
+        fields = ('image', 'data_dict',)
+        #fields = ('image', 'data_dict', 'upload_date')
+        #fields = ('image',)

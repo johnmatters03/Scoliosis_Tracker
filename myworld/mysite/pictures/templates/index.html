@@ -8,11 +8,11 @@
     <title>Posture Analysis</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{% static 'pictures/styles.css' %}">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{% static 'pictures/style.css' %}">
 </head>
 <body>
     <canvas id="canvas"></canvas>
+    <h1 id = "shoulderdiff"><h1>
     <div class="container mt-5">
         <h2 class="mb-4">Upload your picture for posture analysis</h2>
         <form action="{% url 'pictures:upload_picture' %}" method="post" enctype="multipart/form-data">
@@ -36,6 +36,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-converter"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-webgl"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/pose-detection"></script>
-    <script src="script.js"></script>
+    <script src="{% static 'pictures/script.js' %}"></script>
+
 </body>
 </html>

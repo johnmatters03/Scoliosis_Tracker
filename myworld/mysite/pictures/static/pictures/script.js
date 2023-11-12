@@ -77,10 +77,12 @@ imageUpload.addEventListener('change', async (event) => {
         gHeight = canvas.height;
         let dataDict = await detectPose(imageElement);
         let dataDictStr = JSON.stringify(dataDict);
+        //let timestamp = Date.now();
         let formData = new FormData();
         formData.append('image', file);
         formData.append('data_dict', dataDictStr);
-        fetch('/pictures/upload_picture/', {
+        //formData.append('upload_date', timestamp);
+        fetch('/pictures/', {
             method: 'POST',
             body: formData
           })

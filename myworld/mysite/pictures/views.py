@@ -7,6 +7,7 @@ from django.http import HttpResponse
 import base64
 from .forms import PictureForm
 from django.template import loader
+import json
 
 @csrf_exempt  # Use csrf_exempt for demonstration purposes only
 def upload_picture(request):
@@ -16,6 +17,15 @@ def upload_picture(request):
         if request.FILES.get('image'):
             form = PictureForm(request.POST, request.FILES)
             if form.is_valid():
+                instance = form.save(commit=False)
+                
+                
+                # Get the dictionary data as a JSON string from the POST request
+                data_dict_str = request.POST.get('data_dict')
+                if data_dict_str:
+                    # Load the JSON string to a dictionary
+                    instance.data_dict = json.loads(data_dict_str)
+        
                 form.save()
                 return HttpResponse('successfully uploaded')
             # Redirect to a new URL to view the uploaded picture
