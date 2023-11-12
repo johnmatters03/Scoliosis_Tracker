@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Try to parse the JSON data, or log an error if it fails
     try {
-        const graphDataString = graphDataElement.getAttribute('data-graph').replace(/'/g, '"');
+        const graphDataString = graphDataElement.getAttribute('data-graph');
         console.log(graphDataString)
         graphData = JSON.parse(graphDataString);
         console.log(graphData)

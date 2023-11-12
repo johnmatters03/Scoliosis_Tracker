@@ -79,7 +79,7 @@ def graph_view(request):
 
   
     context = {
-    'graph_data': json.dumps(data_for_graph).replace("'", "&apos;")  # This ensures single quotes are HTML encoded
+    'graph_data': json.dumps(data_for_graph).replace('"', '&quot;') # This ensures single quotes are HTML encoded
     }
     rendered_template = template.render(context, request)
     # Return an HttpResponse with the rendered template
